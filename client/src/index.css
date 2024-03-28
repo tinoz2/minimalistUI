@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import "keep-react/css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+    font-family: 'Inter', sans-serif;
+    background:
+        radial-gradient(rgb(190, 190, 190) 3px, transparent 4px),
+        radial-gradient(rgb(190, 190, 190) 3px, transparent 4px),
+        linear-gradient(#fff 4px, transparent 0),
+        linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+        linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+        #fff;
+    background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #378CE7, #1D24CA);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ARROW */
+
+.graph__wrapper {
+    transform: rotate(75deg) translate(100px, 40px);
+}
+
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear forwards;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.dashed {
+    stroke-dasharray: 5, 12;
+
+}
+
+#arrow {
+    animation: arrow 2s linear forwards;
+    opacity: 0;
+}
+
+@keyframes arrow {
+    to {
+        opacity: 1;
+    }
+}
+
+/* GH ICON */
+
+.Btn {
+    width: 35px;
+    height: 35px;
+    margin-right: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.svgContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    letter-spacing: 0.8px;
+    border-radius: 10px;
+    transition: all .3s;
+    border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.BG {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #181818;
+    z-index: -1;
+    border-radius: 10px;
+    pointer-events: none;
+    transition: all .3s;
+}
+
+.Btn:hover .BG {
+    transform: rotate(35deg);
+    transform-origin: bottom;
+}
+
+.Btn:hover .svgContainer {
+    background-color: rgba(156, 156, 156, 0.466);
+    backdrop-filter: blur(4px);
+}
+
+@media(max-width: 576px) {
+    .Btn {
+        margin-right: 0;
+    }
+}
